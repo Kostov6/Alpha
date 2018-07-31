@@ -52,6 +52,7 @@
         <version>3.2.1</version>
         <configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
+          <outputDirectory>C:\Users\C5275297\Desktop\apache-tomee-plus-7.0.5\webapps</outputDirectory>
         </configuration>
       </plugin>
     </plugins>

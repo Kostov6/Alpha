@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> $.getJSON( "http://localhost:8080/Alpha-Build/projects/1", function( json ) {
+
+
+  document.getElementById("id-title").innerHTML=json.name;
+  document.getElementById("id-language").innerHTML=json.lang;
+  document.getElementById("id-a").setAttribute("href",json.image);
+  document.getElementById("id-image").setAttribute("src",json.image);
+  
+ });
+</script>
+
+<a id="id-a" href="google.com" style="text-decoration:none;">
+  	<div class="w3-card-4" >
+    	<div class="w3-container">
+      		<h2 id="id-title">Chess Engine</h2>
+    	</div>
+    	<img id="id-image" src="img_snowtops.jpg" alt="Norway" style="width:100%">
+    	<div class="w3-container">
+			<p id="id-language" class="w3-tag w3-yellow">J</p>
+    	</div>
+  	</div>
+</a>
+
+
+
+</body>
+</html>
