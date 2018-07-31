@@ -1,3 +1,4 @@
+package objects;
 
 
 import javax.persistence.Entity;
