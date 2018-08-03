@@ -10,17 +10,28 @@ import javax.ws.rs.Produces;
 import objects.Project;
 
 
-@Path("/project/{project}")
+@Path("/project/{id}")
 public class ProjectEndpoint {
 	
 	@GET
     // The Java method will produce content identified by the MIME Media
     // type "text/plain"
     @Produces("application/json")
-    public Object getProjectById(@PathParam("project") int projectId) {
+    public Object getProjectById(@PathParam("id") int projectId) {
         
         return findProject(projectId);
     }
+	
+	private Project findProject(int projectId)
+	{
+		EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Alpha-Build");
+	    EntityManager entitymanager = emfactory.createEntityManager();
+	    
+	    Project project = entitymanager.find( Project.class, projectId );
+
+	    System.out.println(project);
+	    return project;
+	}
 	
 	public static void main(String[] args) {
 		createTestProject();
@@ -38,16 +49,5 @@ public class ProjectEndpoint {
 
 		entitymanager.close();
 		emfactory.close();
-	}
-	
-	private static Project findProject(int projectId)
-	{
-		EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Alpha-Build");
-	    EntityManager entitymanager = emfactory.createEntityManager();
-	    
-	    Project project = entitymanager.find( Project.class, projectId );
-
-	    System.out.println(project);
-	    return project;
 	}
 }

@@ -69,9 +69,11 @@ public class Project {
 	public void setLang(String lang) {
 		this.lang = lang;
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Project [id=" + id + ", name=" + name + ", image=" + image + ", type=" + type + ", lang=" + lang + "]";
+	}
 	
 	   
 }

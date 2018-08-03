@@ -3,6 +3,8 @@
 	<persistence-unit name="Alpha-Build" transaction-type="RESOURCE_LOCAL">
 		<class>trash.Employee</class>
 		<class>objects.Project</class>
+		<class>objects.Model</class>
+		<class>objects.Dataset</class>
 		<properties>
 	         <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpadb"/>
 	         <property name="javax.persistence.jdbc.user" value="root"/>

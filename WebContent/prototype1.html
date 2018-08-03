@@ -7,13 +7,13 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script> $.getJSON( "http://localhost:8080/Alpha-Build/projects/1", function( json ) {
+<script> $.getJSON( "http://localhost:8080/Alpha-Build/projects", function( json ) {
 
 
-  document.getElementById("id-title").innerHTML=json.name;
-  document.getElementById("id-language").innerHTML=json.lang;
-  document.getElementById("id-a").setAttribute("href",json.image);
-  document.getElementById("id-image").setAttribute("src",json.image);
+  document.getElementById("id-title").innerHTML=json[1].name;
+  document.getElementById("id-language").innerHTML=json[1].lang;
+  document.getElementById("id-a").setAttribute("href",json[1].image);
+  document.getElementById("id-image").setAttribute("src",json[1].image);
   
  });
 </script>

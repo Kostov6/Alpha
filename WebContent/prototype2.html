@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> $.getJSON( "http://localhost:8080/Alpha-Build/projects", function( jsonArray ) {
+
+  var body=document.body; 
+  $.each(jsonArray, function(i,json)
+  {
+    window.alert(json.name);
+  });
+  
+ });
+</script>
+
+
+</body>
+</html>
