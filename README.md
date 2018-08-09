@@ -12,5 +12,5 @@ In tomee/conf/tomee.xml
     JdbcDriver  com.mysql.jdbc.Driver
     JdbcUrl jdbc:mysql://localhost:3306/jpadb
     UserName    root
-    Password TooMuchSwag69
+    Password T***********
 	</Resource>
