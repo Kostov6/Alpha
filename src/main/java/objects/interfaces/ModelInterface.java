@@ -8,6 +8,6 @@ public interface ModelInterface {
 
 	public Object getModelsForProject(@PathParam("projectId") int projectId);
 	
-	public Object[] getModels(int projectId);
+	public Object getModelById(@PathParam("id") int id);
 		
 }

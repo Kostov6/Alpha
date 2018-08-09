@@ -4,10 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.NamedQuery;
 
 @Entity
-@Table
+@NamedQuery(name="getAllDatasets", query="SELECT d FROM Dataset d ORDER BY d.name ASC")
 public class Dataset {
 
 	@Id

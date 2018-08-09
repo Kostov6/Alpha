@@ -1,5 +1,5 @@
 
-$.getJSON( "http://localhost:8080/Alpha-Build/models/1", function( jsonArray ) {
+$.getJSON( "http://localhost:8080/Alpha-Build/models/getByProjectId/1", function( jsonArray ) {
 	$(document).ready(function(){
 		$.each(
 			jsonArray ,
@@ -8,14 +8,25 @@ $.getJSON( "http://localhost:8080/Alpha-Build/models/1", function( jsonArray ) {
 											  readmeLink(jsonObject.name,jsonObject.repo))) ;
 			}
 		);
+	});
+});
+
+$.getJSON( "http://localhost:8080/Alpha-Build/datasets/getByProjectId/1", function( jsonArray ) {
+	$(document).ready(function(){
 		$.each(
-			array2 ,
-			function(i,el) {
-				$("#ul-list2").append(createModelElement(el,"https://google.com")) ;
+			jsonArray ,
+			function(i,jsonObject) {
+				$("#ul-list2").append(createDatasetElement(jsonObject.name,
+											  			   jsonObject.url)) ;
 			}
 		);
 	});
 });
+
+function createDatasetElement(user,datasetUrl)
+{
+	return "<li onclick=\"window.open('"+datasetUrl+"','_blank')\" >"+user+"</li>";
+}
 
 function createModelElement(user,readmeUrl)
 {

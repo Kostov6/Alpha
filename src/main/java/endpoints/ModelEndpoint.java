@@ -1,35 +1,34 @@
 package endpoints;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+
+import javax.ejb.EJB;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import objects.Model;
+import objects.interfaces.ModelInterface;
 
-@Path("/model/{id}")
-public class ModelEndpoint {
 
+@Path("/models")
+public class ModelEndpoint implements ModelInterface{
+
+	@EJB
+	private ModelInterface modelManager;
+	
 	@GET
-    // The Java method will produce content identified by the MIME Media
-    // type "text/plain"
+	@Path("/getByProjectId/{projectId}")
     @Produces("application/json")
-    public Object getModelById(@PathParam("id") int modelId) {
-        
-        return findModel(modelId);
+    public Object getModelsForProject(@PathParam("projectId") int projectId) {
+        return modelManager.getModelsForProject(projectId);
     }
 	
-	private Model findModel(int modelId)
+	
+	@GET
+	@Path("/getById/{id}")
+	@Produces("application/json")
+	public Object getModelById(@PathParam("id") int id)
 	{
-		EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Alpha-Build");
-	    EntityManager entitymanager = emfactory.createEntityManager();
-	    
-	    Model model = entitymanager.find(Model.class, modelId );
-
-	    System.out.println(model);
-	    return model;
+		return modelManager.getModelById(id);
 	}
 }

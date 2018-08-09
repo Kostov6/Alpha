@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 
 @Entity
 @NamedQuery(name="getAllProjects", query="SELECT p FROM Project p ORDER BY p.name ASC")

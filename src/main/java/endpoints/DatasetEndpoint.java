@@ -1,36 +1,48 @@
 package endpoints;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+
+import java.io.File;
+
+import javax.ejb.EJB;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
-import objects.Dataset;
+import objects.interfaces.DatasetInterface;
 
 
-@Path("/dataset/{id}")
-public class DatasetEndpoint {
+@Path("/datasets")
+public class DatasetEndpoint implements DatasetInterface{
 
+	@EJB
+	private DatasetInterface datasetManager;
+	
 	@GET
-    // The Java method will produce content identified by the MIME Media
-    // type "text/plain"
+	@Path("/getByProjectId/{projectId}")
     @Produces("application/json")
-    public Object getDatasetById(@PathParam("id") int datasetId) {
-        
-        return findDataset(datasetId);
+    public Object getDatasetsForProject(@PathParam("projectId") int projectId) {
+        return datasetManager.getDatasetsForProject(projectId);
     }
 	
-	private Dataset findDataset(int datasetId)
+	
+	@GET
+	@Path("/getById/{id}")
+	@Produces("application/json")
+	public Object getDatasetById(@PathParam("id") int id)
 	{
-		EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Alpha-Build");
-	    EntityManager entitymanager = emfactory.createEntityManager();
-	    
-	    Dataset dataset = entitymanager.find(Dataset.class, datasetId );
-
-	    System.out.println(dataset);
-	    return dataset;
+		return datasetManager.getDatasetById(id);
 	}
+	
+//	@GET
+//	@Produces(MediaType.APPLICATION_OCTET_STREAM)
+//	public Response getFile() {
+//		File file = null; // Initialize this to the File path you want to serve.
+//
+//		return Response.ok(file, MediaType.APPLICATION_OCTET_STREAM)
+//				.header("Content-Disposition", "attachment; filename=\"" + file.getName() + "\"" ) //optional
+//				.build();
+//	}
 }
