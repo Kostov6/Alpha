@@ -11,8 +11,9 @@ import objects.Project;
 public class InitializingDatabases 
 {
 	public static void main(String[] args) {
-		initializeModels();
-		initializeDataset();
+		//initializeModels();
+		//initializeDataset();
+		initializeProjects();
 	}
 	
 	private static void initializeModels()

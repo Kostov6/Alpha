@@ -4,10 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@NamedQuery(name="getAllModels", query="SELECT m FROM Model m ORDER BY m.name ASC")
 public class Model {
 
 	@Id

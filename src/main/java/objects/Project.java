@@ -5,10 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@NamedQuery(name="getAllProjects", query="SELECT p FROM Project p ORDER BY p.name ASC")
 public class Project {
 
 	@Id

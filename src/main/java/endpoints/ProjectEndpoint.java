@@ -13,6 +13,7 @@ import objects.Project;
 @Path("/project/{id}")
 public class ProjectEndpoint {
 	
+	
 	@GET
     // The Java method will produce content identified by the MIME Media
     // type "text/plain"
