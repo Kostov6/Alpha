@@ -21,15 +21,11 @@ public class ProjectsEndpoint implements ProjectInterface {
 		return projectManager.getProjects();
     }
 	
-	
-	
-	public Object[] getNProjects()
-	{
-		return projectManager.getNProjects();
+	public Object[] getAllProjects(){
+		return projectManager.getAllProjects();
 	}
 	
-	public Object[] getNProjects(int from,int to)
-	{
+	public Object[] getNProjects(int from,int to){
 		return projectManager.getNProjects(from, to);
 	}
 	

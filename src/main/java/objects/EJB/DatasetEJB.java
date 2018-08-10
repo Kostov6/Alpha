@@ -19,7 +19,7 @@ public class DatasetEJB implements DatasetInterface{
 	@Override
 	public Object getDatasetsForProject(int projectId) {
 		//initialize();
-		List models=entitymanager.createNamedQuery("getAllDatasets").getResultList();
+		List models=entitymanager.createNamedQuery("getDatasetsByProjectId").setParameter("projectId", projectId).getResultList();
 	    return models.toArray();
 	}
 

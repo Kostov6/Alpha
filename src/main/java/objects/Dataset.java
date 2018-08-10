@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
 @Entity
-@NamedQuery(name="getAllDatasets", query="SELECT d FROM Dataset d ORDER BY d.name ASC")
+@NamedQuery(name="getDatasetsByProjectId", query="SELECT d FROM Dataset d WHERE d.projectId = :projectId ORDER BY d.name ASC")
 public class Dataset {
 
 	@Id

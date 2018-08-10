@@ -16,7 +16,7 @@ public class ProjectEJB implements ProjectInterface {
 	private EntityManager entitymanager;
 
 	@Override
-	public Object[] getNProjects() {
+	public Object[] getAllProjects() {
 	    //TODO check if "use database" is needed and test
 	    List<Project> projects = entitymanager.createNamedQuery("getAllProjects").getResultList();
 	    for(Project p: projects)
@@ -34,13 +34,16 @@ public class ProjectEJB implements ProjectInterface {
 	public Object getProjects() {
 
 		//initialize();
-		return getNProjects();
+		return getAllProjects();
 	}
 	
 	private void initialize()
 	{
-		Project project = new Project(1, "Chess engine JSON image", "images/img_snowtops.jpg", "supervised", "java");
-		entitymanager.persist(project);
+		Project project1 = new Project(1, "Chess engine", "images/chess-engine.jpeg", "supervised", "java");
+		Project project2 = new Project(2, "Symbol recognition", "images/hand-digits.png", "supervised", "java");
+
+		entitymanager.persist(project1);
+		entitymanager.persist(project2);
 	}
 
 }

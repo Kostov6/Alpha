@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
 @Entity
-@NamedQuery(name="getAllModels", query="SELECT m FROM Model m ORDER BY m.name ASC")
+@NamedQuery(name="getModelsByProjectId", query="SELECT m FROM Model m WHERE m.projectId = :projectId ORDER BY m.name ASC")
 public class Model {
 
 	@Id

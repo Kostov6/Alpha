@@ -56,4 +56,3 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }
 
-setOutput(httpGet('https://raw.githubusercontent.com/eclipse/che/master/README.md'));

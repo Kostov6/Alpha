@@ -1,5 +1,5 @@
 
-$.getJSON( "http://localhost:8080/Alpha-Build/models/getByProjectId/1", function( jsonArray ) {
+$.getJSON( "http://localhost:8080/Alpha-Build/models/getByProjectId/"+getProjectId(), function( jsonArray ) {
 	$(document).ready(function(){
 		$.each(
 			jsonArray ,
@@ -11,7 +11,7 @@ $.getJSON( "http://localhost:8080/Alpha-Build/models/getByProjectId/1", function
 	});
 });
 
-$.getJSON( "http://localhost:8080/Alpha-Build/datasets/getByProjectId/1", function( jsonArray ) {
+$.getJSON( "http://localhost:8080/Alpha-Build/datasets/getByProjectId/"+getProjectId(), function( jsonArray ) {
 	$(document).ready(function(){
 		$.each(
 			jsonArray ,
@@ -22,6 +22,15 @@ $.getJSON( "http://localhost:8080/Alpha-Build/datasets/getByProjectId/1", functi
 		);
 	});
 });
+
+function getProjectId()
+{
+	var url_string = window.location.href
+	var url = new URL(url_string);
+	var c = url.searchParams.get("projectId");
+	console.log(c);
+	return c;
+}
 
 function createDatasetElement(user,datasetUrl)
 {

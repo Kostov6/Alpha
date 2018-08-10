@@ -7,7 +7,6 @@
 		transaction-type="JTA">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<jta-data-source>viktorDS</jta-data-source>
-		<class>trash.Employee</class>
 		<class>objects.Project</class>
 		<class>objects.Model</class>
 		<class>objects.Dataset</class>
