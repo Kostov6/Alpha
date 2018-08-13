@@ -24,15 +24,21 @@ public class ModelEJB implements ModelInterface{
 
 	private void initialize()
 	{
-		Model model1=new Model(1,1,"erikbern","url1",1,"deep-pink");
-		Model model2=new Model(2,1,"lhartikk","url2",2,"simple-chess-ai");
-		Model model3=new Model(3,2,"taisukeoe","url2",2,"matsuri-mnist-example");
+		Model model1=new Model(1,"erikbern","url1",1,"deep-pink");
+		Model model2=new Model(1,"lhartikk","url2",2,"simple-chess-ai");
+		Model model3=new Model(2,"taisukeoe","url2",2,"matsuri-mnist-example");
 		
 		entitymanager.persist(model1);
 		entitymanager.persist(model2);
 		entitymanager.persist(model3);
 	}
 
+	@Override
+	public void addModel(Model model)
+	{
+		entitymanager.persist(model);
+	}
+	
 	@Override
 	public Object getModelById(int id) {
 		return entitymanager.find(Model.class, id );

@@ -22,8 +22,7 @@ public class Model {
 	public Model() {
 	}
 
-	public Model(int id, int projectId, String name, String gitUrl, int gitStars,String repo) {
-		this.id = id;
+	public Model(int projectId, String name, String gitUrl, int gitStars,String repo) {
 		this.projectId = projectId;
 		this.name = name;
 		this.gitUrl = gitUrl;

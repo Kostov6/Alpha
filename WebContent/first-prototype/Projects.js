@@ -15,7 +15,7 @@ $.getJSON( "http://localhost:8080/Alpha-Build/projects", function( jsonArray ) {
 
 function createProjectElement(jsonObject)
 {
-	return "<a href=\""+getLink(jsonObject.id)+"\" style=\"text-decoration:none; width: 300px; margin:15px\">"+
+	return "<a href=\""+getLink(jsonObject.id)+"\" style=\"text-decoration:none; width: 300px; height:185px; margin:15px\">"+
 		"<div class=\"w3-card-4\"><div class=\"w3-container\"><h2>"+
 		jsonObject.name+"</h2></div><img src=\""+jsonObject.image+"\" alt=\"Norway\" style=\"width:100%\">"+
 		"<div class=\"w3-container\"><p class=\"w3-tag w3-yellow\">"+jsonObject.lang+

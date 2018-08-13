@@ -22,9 +22,9 @@ public class InitializingDatabases
 		EntityManager entitymanager = emfactory.createEntityManager();
 		entitymanager.getTransaction().begin();
 
-		Model model1 = new Model(1,1,"Gosho","/gitUrl",3,"repoName 1");
-		Model model2 = new Model(2,1,"Pehso","/gitUrl2",2,"repoName 2");
-		Model model3 = new Model(3,2,"Chvetcho","/gitUrl3",0,"repoName 3");
+		Model model1 = new Model(1,"Gosho","/gitUrl",3,"repoName 1");
+		Model model2 = new Model(1,"Pehso","/gitUrl2",2,"repoName 2");
+		Model model3 = new Model(2,"Chvetcho","/gitUrl3",0,"repoName 3");
 
 		entitymanager.persist(model1);
 		entitymanager.persist(model2);
