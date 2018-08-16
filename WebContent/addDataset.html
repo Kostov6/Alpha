@@ -2,17 +2,17 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+		<script src="addDataset.js"></script>
 	</head>
 	<body>
 		<h1>Add your dataset</h1>
-		<form action="/action">
-			Debug: Manual user: <input type="text" name="user"><br>
+		<form>
+			Debug: Manual user: <input type="text" name="user"/><br>
 			<hr>
-			git-Url: <input type="text" name="git-url"><br>
-			Project: <input type="text" name="project"><br>
-			Dataset link: <input type="text" name="dataset-url"><br>
-			<input type="submit" value="Submit">
+			Project: <input type="text" name="project"/><br>
+			Dataset file: <input type="file" id="dataset-file"/><br>
+			<button onclick="uploadFiles();">Upload</button>
 		</form>
 	<body>
 </html>

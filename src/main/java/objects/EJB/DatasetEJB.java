@@ -23,12 +23,20 @@ public class DatasetEJB implements DatasetInterface{
 	    return models.toArray();
 	}
 
+	@Override
+	public void addDataset(Dataset dataset)
+	{
+		entitymanager.persist(dataset);
+	}
+	
 	private void initialize()
 	{
-		Dataset dataset1=new Dataset(1,1,"eclipse","http://localhost:8080/Alpha-Build/datasets/getById/1",1,0.5f);
-		Dataset dataset2=new Dataset(2,1,"erikbern","http://localhost:8080/Alpha-Build/datasets/getById/1",2,0.9f);
-		entitymanager.persist(dataset1);
-		entitymanager.persist(dataset2);
+//		Dataset dataset1=new Dataset(1,"eclipse","http://localhost:8080/Alpha-Build/datasets/getById/1",1,0.5f);
+//		Dataset dataset2=new Dataset(1,"erikbern","http://localhost:8080/Alpha-Build/datasets/getById/1",2,0.9f);
+//		entitymanager.persist(dataset1);
+//		entitymanager.persist(dataset2);
+		Dataset testDataset=new Dataset(1,"Kostov6","https://raw.githubusercontent.com/Kostov6/test-repo/master/MNIST.ser",1,1);
+		entitymanager.persist(testDataset);
 	}
 	
 	@Override

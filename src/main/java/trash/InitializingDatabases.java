@@ -40,14 +40,14 @@ public class InitializingDatabases
 		EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Alpha-Build");
 		EntityManager entitymanager = emfactory.createEntityManager();
 		entitymanager.getTransaction().begin();
+//
+//		Dataset dataset1 = new Dataset(1,1,"Gosho","/gitUrl",3,1);
+//		Dataset dataset2 = new Dataset(2,1,"Pehso","/gitUrl2",2,2);
+//		Dataset dataset3 = new Dataset(3,2,"Chvetcho","/gitUrl3",0,3);
 
-		Dataset dataset1 = new Dataset(1,1,"Gosho","/gitUrl",3,1);
-		Dataset dataset2 = new Dataset(2,1,"Pehso","/gitUrl2",2,2);
-		Dataset dataset3 = new Dataset(3,2,"Chvetcho","/gitUrl3",0,3);
-
-		entitymanager.persist(dataset1);
-		entitymanager.persist(dataset2);
-		entitymanager.persist(dataset3);
+//		entitymanager.persist(dataset1);
+//		entitymanager.persist(dataset2);
+//		entitymanager.persist(dataset3);
 		entitymanager.getTransaction().commit();
 
 		entitymanager.close();
@@ -60,9 +60,9 @@ public class InitializingDatabases
 		EntityManager entitymanager = emfactory.createEntityManager();
 		entitymanager.getTransaction().begin();
 
-		Project project = new Project(1,"Chess engine JSON image","images/img_snowtops.jpg","supervised","java");
+//		Project project = new Project(1,"Chess engine JSON image","images/img_snowtops.jpg","supervised","java");
 
-		entitymanager.persist(project);
+//		entitymanager.persist(project);
 		entitymanager.getTransaction().commit();
 
 		entitymanager.close();

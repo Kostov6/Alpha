@@ -3,11 +3,16 @@ package endpoints;
 
 
 import javax.ejb.EJB;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
+import objects.Dataset;
+import objects.Model;
 import objects.interfaces.DatasetInterface;
 
 
@@ -22,6 +27,22 @@ public class DatasetEndpoint implements DatasetInterface{
     @Produces("application/json")
     public Object getDatasetsForProject(@PathParam("projectId") int projectId) {
         return datasetManager.getDatasetsForProject(projectId);
+    }
+	
+	@PUT
+	@Path("/datasetListener")
+	@Consumes("application/octet-stream")
+    public void datasetListener(String json)
+    {
+		System.out.println(json.length());
+    }
+	
+	@PUT
+	@Path("/addDataset")
+	@Consumes("application/json")
+    public void addDataset(Dataset json)
+    {
+		datasetManager.addDataset(json);
     }
 	
 	@GET
