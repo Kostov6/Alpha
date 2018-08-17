@@ -37,13 +37,15 @@ public class ProjectEJB implements ProjectInterface {
 		return getAllProjects();
 	}
 	
-	private void initialize()
+	public void initialize()
 	{
-		Project project1 = new Project(1, "Chess engine", "images/chess-engine.jpeg", "supervised", "java");
-		Project project2 = new Project(2, "Symbol recognition", "images/hand-digits.png", "supervised", "java");
-
-		entitymanager.persist(project1);
-		entitymanager.persist(project2);
+		Project[] projects= {
+				new Project(1, "Chess engine", "images/chess-engine.jpeg", "supervised", "java"),
+				new Project(2, "Symbol recognition", "images/hand-digits.png", "supervised", "java")
+		};
+		
+		for(Project project: projects)
+			entitymanager.persist(project);
 	}
 
 }

@@ -29,5 +29,11 @@ public class ProjectsEndpoint implements ProjectInterface {
 		return projectManager.getNProjects(from, to);
 	}
 	
+	@GET
+	@Path("/initialize")
+	public void initialize() {
+		projectManager.initialize();
+	}
+	
 	
 }

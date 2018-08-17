@@ -11,5 +11,7 @@ public interface ProjectInterface {
 	
 	public Object[] getNProjects(int from,int to);
 	
+	public void initialize();
+	
 	
 }

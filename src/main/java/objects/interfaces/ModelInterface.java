@@ -14,4 +14,6 @@ public interface ModelInterface {
 	public Object getModelById(@PathParam("id") int id);
 	
 	public void addModel(Model json);
+	
+	public void initialize();
 }

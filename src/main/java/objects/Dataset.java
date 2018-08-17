@@ -23,7 +23,6 @@ public class Dataset {
 	}
 
 	public Dataset(int projectId, String name, String url, int stars, float size) {
-		this.id = id;
 		this.projectId = projectId;
 		this.name = name;
 		this.url = url;

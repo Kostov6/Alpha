@@ -13,4 +13,6 @@ public interface DatasetInterface {
 	public Object getDatasetById(@PathParam("id") int id);
 	
 	public void addDataset(Dataset json);
+
+	public void initialize();
 }

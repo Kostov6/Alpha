@@ -35,6 +35,11 @@ public class ModelEndpoint implements ModelInterface{
     }
 	
 
+	@GET
+	@Path("/initialize")
+	public void initialize() {
+		modelManager.initialize();
+	}
 	
 	@GET
 	@Path("/getById/{id}")

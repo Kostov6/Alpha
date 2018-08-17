@@ -14,6 +14,7 @@ import javax.json.JsonObject;
 import javax.json.JsonReader;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -50,8 +51,9 @@ public class GitAuth extends HttpServlet {
 			JsonObject tokenJson=repostAndGetToken(code,CLIENT_ID,CLIENT_SECRET,null);
 			String token=tokenJson.getString("access_token");
 			System.out.println("Access-token: "+token);
-			System.out.println(request.getSession().getAttribute("git_access_token"));
-			request.getSession().setAttribute("git_access_token", token);
+			
+			response.addCookie(new Cookie("access_token",token));
+			response.getWriter().append("<a href='http://localhost:8080/Alpha-Build/first-prototype/index.html' >Home</a>");
 		} catch (URISyntaxException e) {
 			
 			e.printStackTrace();
@@ -72,7 +74,7 @@ public class GitAuth extends HttpServlet {
 			if(state!=null) {
 				params.add(new BasicNameValuePair("state", state));
 			}
-			//params.add(new BasicNameValuePair("redirect_uri ", ""));
+			//params.add(new BasicNameValuePair("redirect_uri ", "http://localhost:8080/Alpha-Build/GitAuth/Login"));
 	
 			get.setHeader("Accept", "application/json");
 			URI uri = new URIBuilder(get.getURI()).addParameters(params).build();

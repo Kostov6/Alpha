@@ -22,15 +22,16 @@ public class ModelEJB implements ModelInterface{
 	    return models.toArray();
 	}
 
-	private void initialize()
+	public void initialize()
 	{
-		Model model1=new Model(1,"erikbern","url1",1,"deep-pink");
-		Model model2=new Model(1,"lhartikk","url2",2,"simple-chess-ai");
-		Model model3=new Model(2,"taisukeoe","url2",2,"matsuri-mnist-example");
+		Model[] models= {
+				new Model(1,"erikbern","url1",1,"deep-pink"),
+				new Model(1,"lhartikk","url2",2,"simple-chess-ai"),
+				new Model(2,"taisukeoe","url2",2,"matsuri-mnist-example")
+		};
 		
-		entitymanager.persist(model1);
-		entitymanager.persist(model2);
-		entitymanager.persist(model3);
+		for(Model model: models)
+			entitymanager.persist(model);
 	}
 
 	@Override
