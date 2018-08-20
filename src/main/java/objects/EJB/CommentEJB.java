@@ -33,4 +33,9 @@ public class CommentEJB implements CommentInterface{
 		for(Comment comment:comments)
 			entitymanager.persist(comment);
 	}
+
+	@Override
+	public void addComment(Comment json) {
+		entitymanager.persist(json);
+	}
 }

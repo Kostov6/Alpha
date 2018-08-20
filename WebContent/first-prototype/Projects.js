@@ -1,11 +1,10 @@
 
-$.getJSON( "http://localhost:8080/Alpha-Build/projects", function( jsonArray ) {
-	$(document).ready(function(){
+$(document).ready(function(){
+	$.getJSON( "http://localhost:8080/Alpha-Build/projects", function( jsonArray ) {
 		$.each(
 			jsonArray ,
 			function(i,jsonObject) {
 				$("#container").append(createProjectElement(jsonObject)) ;
-				
 				console.log(createProjectElement(jsonObject));
 			}
 		);

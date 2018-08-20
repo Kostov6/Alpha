@@ -1,6 +1,5 @@
-
-$.getJSON( "http://localhost:8080/Alpha-Build/models/getByProjectId/"+getProjectId(), function( jsonArray ) {
-	$(document).ready(function(){
+$(document).ready(function(){
+	$.getJSON("http://localhost:8080/Alpha-Build/models/getByProjectId/"+getProjectId(), function( jsonArray ) {
 		$.each(
 			jsonArray ,
 			function(i,jsonObject) {
@@ -9,10 +8,7 @@ $.getJSON( "http://localhost:8080/Alpha-Build/models/getByProjectId/"+getProject
 			}
 		);
 	});
-});
-
-$.getJSON( "http://localhost:8080/Alpha-Build/datasets/getByProjectId/"+getProjectId(), function( jsonArray ) {
-	$(document).ready(function(){
+	$.getJSON( "http://localhost:8080/Alpha-Build/datasets/getByProjectId/"+getProjectId(), function( jsonArray ) {
 		$.each(
 			jsonArray ,
 			function(i,jsonObject) {
@@ -22,6 +18,8 @@ $.getJSON( "http://localhost:8080/Alpha-Build/datasets/getByProjectId/"+getProje
 		);
 	});
 });
+
+
 
 function getProjectId()
 {

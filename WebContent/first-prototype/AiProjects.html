@@ -1,24 +1,26 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-	<title>Full Secondary Column, 1/2 x 1/2 Main Column.</title>
+	<title>Project</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="lib/github-markdown.css">
     <link rel="stylesheet" href="commentStyle.css">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="login.js"></script>
 	<script src="AiProjectList.js"></script>
 	<script src="comment.js"></script>
 </head>
 <body>
 	<div class="content" style="display:flex;">
-    	<div style="width: 50%;padding: 10px 0px 10px 10px;">
+    	<div id="left-half"style="width: 50%;padding: 10px 0px 10px 10px;">
 			<h4>Models</h4>
 			<ul class="w3-ul w3-hoverable w3-border" id="ul-list1"></ul>
 			<h4>Datasets</h4>
 			<ul class="w3-ul w3-hoverable w3-border" id="ul-list2"></ul>
 			<div id="comments"></div>
+			<div id="comment-form-box"></div>
 	  	</div>
       	<div style="width: 50%;padding:15px" id="out" class="markdown-body"></div>
 	</div>
