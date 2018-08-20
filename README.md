@@ -4,7 +4,7 @@ Runing on apache-tomEE-plus-7.05
 On MYSQL 8, database name: jpadb with Legacy authentication method
 
 In tomee/conf/tomee.xml
-	<Resource id="MySQL Database" type="DataSource">
+	#Resource id="MySQL Database" type="DataSource"#
     #  MySQL example
     #
     #  This connector will not work until you download the driver at:
@@ -13,4 +13,4 @@ In tomee/conf/tomee.xml
     JdbcUrl jdbc:mysql://localhost:3306/jpadb
     UserName    root
     Password T***********
-	</Resource>
+	#/Resource#
