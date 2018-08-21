@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>First steps</title>
+</head>
+<style>
+div {display:none;}
+</style>
+<body>
+	<h2>Prerequisites:</h2>
+	Basics of programming and OOP
+	<h4>Note: It is recommended to have knowledge of JAVA</h4>
+	<div id="beginner" >
+		<h2>Beginner</h2>
+		<p>- java basic knowledge</p>
+		<p>- no experience with Git</p>
+		<p>- no AI knowledge</p>
+	</div>
+	<div id="intermediate">
+		<h2>Intermediate</h2>
+		<p>- java experience</p>
+		<p>- experience with git</p>
+		<p>- none to basic AI understanding</p>
+	</div>
+	<div id="advanced">	
+		<h2>Advanced</h2>
+		<p>- a lot of java knowledge</p>
+		<p>- experience with Git and docker</p>
+		<p>- basic to intermediate AI understanding with some experience</p>
+	</div>
+	<script>
+		function hide(name)
+		{
+			var x = document.getElementById(name);
+	   		x.style.display="none";
+		}
+		function show(name)
+		{
+			var x = document.getElementById(name);
+	   		x.style.display="block";
+		}
+	</script>
+	<button onclick="show('beginner');show('intermediate');show('advanced');">Show Beginner</button>
+	<button onclick="hide('beginner');show('intermediate');show('advanced');">Show Intermediate</button>
+	<button onclick="hide('beginner');hide('intermediate');show('advanced');">Show Advanced</button>
+</body>
+</html>
