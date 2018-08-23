@@ -5,6 +5,11 @@
   		<meta http-equiv="X-UA-Compatible" content="IE=edge">
   		<meta name="viewport" content="width=device-width, initial-scale=1">
   		<title>AIFoundry</title>
+  		
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="FeaturedProjects.js"></script>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  		
   
   		<!-- Bootstrap CSS -->
   		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -14,7 +19,7 @@
   		<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
   		<!-- Style -->
   		<link href='style.css' rel='stylesheet' type='text/css'>
-  
+  		
   		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   		<!--[if lt IE 9]>
@@ -40,9 +45,9 @@
   				<div class="collapse navbar-collapse navbar-ex1-collapse">
   					<ul class="nav navbar-nav navbar-right">
 						<li><a href="https://github.com/login/oauth/authorize?client_id=099b3b26927004bc8273&scope=user:email%20public_repo">Login</a></li>
-  						<li><a href="#">Home</a></li>
+  						<li><a href="http://localhost:8080/Alpha-Build/first-prototype/index.html">Home</a></li>
   						<li><a href="#">About Us</a></li>
-  						<li><a href="#">Tutorials</a></li>
+  						<li><a href="http://localhost:8080/Alpha-Build/first-prototype/Tutorials.html">Tutorials</a></li>
   						<li><a href="#">More about AI</a></li>
  
   					</ul>
@@ -59,7 +64,7 @@
   						<h2>AIFoundry</h2>
   						<p class="lead">A website that helps you step into AI and start coding it</p>
   						<ul class="list-inline">
-  							<li><a href="#" title="Learn More" class="btn btn-md btn-info">First steps</a></li>
+  							<li><a href="http://localhost:8080/Alpha-Build/first-prototype/FirstSteps.html" title="Learn More" class="btn btn-md btn-info">First steps</a></li>
   							<li><a href="http://localhost:8080/Alpha-Build/first-prototype/Projects.html" title="Learn More" class="btn btn-md btn-primary">AI projects</a></li>
   						</ul>
   					</div>
@@ -81,7 +86,7 @@
   							<i class="fa fa-rocket"></i>
   							<h3>Easy to follow tutorials</h3>
   							<p>For people that are new in this field and want to learn the basics.</p>
-  							<a href="#" title="Learn More" class="btn btn-sm btn-primary">Learn More</a>
+  							<a href="http://localhost:8080/Alpha-Build/first-prototype/Tutorials.html" title="Learn More" class="btn btn-sm btn-primary">Learn More</a>
   						</div><!--/.service-block-->
   					</div>
   					<div class="col-md-4">
@@ -121,57 +126,20 @@
   		<!-- START SECTION -->
   		<div class="section">
   			<div class="container">
-  				<div class="row">
+  				<div id="featured-container" class="row">
   					<div class="col-md-12 text-center">
   						<h2 class="section-title">Featured projects</h2>
   						<p class="section-description">Project that are hotly debated upon at this time</p>
   					</div>
-  					<div class="col-md-4">
-  						<div class="entry">
-  							<div class="entry-media">
-  								<a href="#" title="">
-  									<span class="absolute-wrapper"></span>
-  									<img src="images/blog1.jpg" alt="" class="img-responsive" />
-  								</a>
-  							</div>
-  							<h3 class="entry-title"><a href="#" title="Yelp Is Awful for Everyone Involved">Yelp Is Awful for Everyone Involved</a></h3>
-  							<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
-  							<a href="#" title="Learn More" class="btn read-more btn-sm btn-primary">Learn More</a>
-  						</div><!--/.entry-->
-  					</div>
-  					<div class="col-md-4">
-  						<div class="entry">
-  							<div class="entry-media">
-  								<a href="#" title="">
-  									<span class="absolute-wrapper"></span>
-  									<img src="images/blog2.jpg" alt="" class="img-responsive" />
-  								</a>
-  							</div>
-  							<h3 class="entry-title"><a href="#" title="2 Best Sites to Build Your Own Website">2 Best Sites to Build Your Own Website</a></h3>
-  							<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
-  							<a href="#" title="Learn More" class="btn read-more btn-sm btn-primary">Learn More</a>
-  						</div><!--/.entry-->
-  					</div>
-  					<div class="col-md-4">
-  						<div class="entry">
-  							<div class="entry-media">
-  								<a href="#" title="">
-  									<span class="absolute-wrapper"></span>
-  									<img src="images/blog3.jpg" alt="" class="img-responsive" />
-  								</a>
-  							</div>
-  							<h3 class="entry-title"><a href="#" title="2 Best Sites to Build Your Own Website">2 Best Sites to Build Your Own Website</a></h3>
-  							<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
-  							<a href="#" title="Learn More" class="btn read-more btn-sm btn-primary">Learn More</a>
-  						</div><!--/.entry-->
-  					</div>
+  					
+  					
   				</div><!--/.row-->
   			</div><!--/.container-->
   		</div>
   		<!--/.section -->
 
-  		<!-- START SECTION -->
-  		<div class="section hero text-center background-dark dark-bg">
+		<!-- START SECTION -->
+  		<div class="section hero text-center background-light">
   			<div class="background-image" style="background: url(images/hero.jpg) no-repeat fixed center center; background-size: cover; opacity: .2;"></div>
   			<div class="container">
   				<div class="row">
@@ -212,19 +180,6 @@
   					</div>
   				</div><!--/.row-->
   			</div><!--/.container-->
-  		</div>
-  		<!--/.section -->
-
-  		<!-- START SECTION -->
-  		<div class="section hero text-center background-light">
-  			<div class="background-image" style="background: url(images/hero.jpg) no-repeat fixed center center; background-size: cover; opacity: .2;"></div>
-  			<div class="container">
-  				<div class="row">
-  					<div class="col-md-12">
-  						<h3 class="text-uppercase letter-spacing-md font-weight-lg margin-zero">Laudantium ullam consequatur repellat debitis maxime.</h3>
-  					</div>
-  				</div>
-  			</div>
   		</div>
   		<!--/.section -->
 

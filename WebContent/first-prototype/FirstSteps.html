@@ -3,15 +3,58 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>First steps</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
+<!-- Google Fonts -->
+<link
+	href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700'
+	rel='stylesheet' type='text/css'>
+<!-- Font Awesome -->
+<link
+	href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'
+	rel='stylesheet' type='text/css'>
+<!-- Style -->
+<link href='style.css' rel='stylesheet' type='text/css'>
+
 </head>
-<style>
-div {display:none;}
-</style>
+
 <body>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Indigo</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a
+						href="https://github.com/login/oauth/authorize?client_id=099b3b26927004bc8273&scope=user:email%20public_repo">Login</a></li>
+					<li><a href="http://localhost:8080/Alpha-Build/first-prototype/index.html">Home</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a
+						href="http://localhost:8080/Alpha-Build/first-prototype/Tutorials.html">Tutorials</a></li>
+					<li><a href="#">More about AI</a></li>
+
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+	</nav>
 	<h2>Prerequisites:</h2>
 	Basics of programming and OOP
 	<h4>Note: It is recommended to have knowledge of JAVA</h4>
-	<div id="beginner" >
+	<div id="beginner">
 		<h2>Beginner</h2>
 		<p>- java basic knowledge</p>
 		<p>- no experience with Git</p>
@@ -23,26 +66,30 @@ div {display:none;}
 		<p>- experience with git</p>
 		<p>- none to basic AI understanding</p>
 	</div>
-	<div id="advanced">	
+	<div id="advanced">
 		<h2>Advanced</h2>
 		<p>- a lot of java knowledge</p>
 		<p>- experience with Git and docker</p>
 		<p>- basic to intermediate AI understanding with some experience</p>
 	</div>
 	<script>
-		function hide(name)
-		{
+		function hide(name) {
 			var x = document.getElementById(name);
-	   		x.style.display="none";
+			x.style.display = "none";
 		}
-		function show(name)
-		{
+		function show(name) {
 			var x = document.getElementById(name);
-	   		x.style.display="block";
+			x.style.display = "block";
 		}
 	</script>
-	<button onclick="show('beginner');show('intermediate');show('advanced');">Show Beginner</button>
-	<button onclick="hide('beginner');show('intermediate');show('advanced');">Show Intermediate</button>
-	<button onclick="hide('beginner');hide('intermediate');show('advanced');">Show Advanced</button>
+	<button
+		onclick="show('beginner');show('intermediate');show('advanced');">Show
+		Beginner</button>
+	<button
+		onclick="hide('beginner');show('intermediate');show('advanced');">Show
+		Intermediate</button>
+	<button
+		onclick="hide('beginner');hide('intermediate');show('advanced');">Show
+		Advanced</button>
 </body>
 </html>
