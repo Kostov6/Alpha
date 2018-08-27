@@ -3,6 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>First steps</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -19,6 +20,21 @@
 <!-- Style -->
 <link href='style.css' rel='stylesheet' type='text/css'>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+#beginner:hover
+{
+	background-color:#f8f8f8;
+}
+#intermediate:hover
+{
+	background-color:#f8f8f8;
+}
+#advanced:hover
+{
+	background-color:#f8f8f8;
+}
+</style>
 </head>
 
 <body>
@@ -51,26 +67,109 @@
 			<!-- /.navbar-collapse -->
 		</div>
 	</nav>
+	<h1>First steps</h1>
+	I bet you have heard of the so-called AI or artificial intelligence. Are you curious about learning more about it? Given you have some experience in coding or are willing to start learning more about software engineering, AI might be a little bit of an advanced topic but don't worry! Take it as a challenge and use this website as a helping hand in learning about coding and AI.
+	<h3>Before you start</h3>
+	It is a good idea to have some knowledge on the basics on how to code. If you haven't started to program, we encourage you to begin a ready-to-use course on programming or if you are more of a self-learned we can recommend you some free online tutorials and books for those who prefer reading.
+	<br>
+	Our choice in language is JAVA because this language is constructed around a concept called Object Oriented Programming(OOP). This concept is quite intuitive and when you get used to it, understanding of programming in general will become easier.
+	<br>
+	<a href="https://www.youtube.com/watch?v=WPvGqX-TXP0">Learn java basics in 30 minute(intensive)</a>
+	<br>
+	<a href="https://www.youtube.com/watch?v=30bNnlpboTI&list=PLWms45O3n--5vDnNd6aiu1CSWX3JlCU1n&index=13">Java wizard shooter game tutorial</a>
+	<br>
+	<a href="https://www.youtube.com/watch?v=SKFNouTFgto&list=PLWms45O3n--5vv69_AlMw23O1Z31CaW1F">Ongoing zombie game tutorial</a>
 	<h2>Prerequisites:</h2>
 	Basics of programming and OOP
 	<h4>Note: It is recommended to have knowledge of JAVA</h4>
-	<div id="beginner">
-		<h2>Beginner</h2>
-		<p>- java basic knowledge</p>
-		<p>- no experience with Git</p>
-		<p>- no AI knowledge</p>
+	<div style="display:flex">
+		<div style="width:33%; padding:20px">
+			<div id="beginner" class="w3-card-4">
+				<header class="w3-container w3-yellow">
+					<h2>Beginner</h2>
+				</header>
+				<div class="w3-container">
+					<p>- java basic knowledge</p>
+					<p>- no experience with source control</p>
+					<p>- no AI knowledge</p>
+				</div>
+			</div>
+		</div>
+		<div style="width:33%; padding:20px">
+			<div id="intermediate" class="w3-card-4">
+				<header class="w3-container w3-blue">
+					<h2>Intermediate</h2>
+				</header>
+				<div class="w3-container">
+					<p>- java experience</p>
+					<p>- basics of Git and Github</p>
+					<p>- none to basic AI understanding</p>
+				</div>
+			</div>
+		</div>
+			<div style="width:33%; padding:20px">
+			<div id="advanced" class="w3-card-4">
+				<header class="w3-container w3-red">
+					<h2>Advanced</h2>
+				</header>
+				<div class="w3-container">
+					<p>- a lot of java knowledge</p>
+					<p>- experience with Git and docker</p>
+					<p>- basic to intermediate AI understanding </p>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div id="intermediate">
-		<h2>Intermediate</h2>
-		<p>- java experience</p>
-		<p>- experience with git</p>
-		<p>- none to basic AI understanding</p>
-	</div>
-	<div id="advanced">
-		<h2>Advanced</h2>
-		<p>- a lot of java knowledge</p>
-		<p>- experience with Git and docker</p>
-		<p>- basic to intermediate AI understanding with some experience</p>
+	<div>
+		<div id="beginner_section" style="display:none">
+			<h2>Coding:</h2>
+			Processing is a gread API to draw on canvas different shapes. You can even try to make your own game! Here is its link:
+			<br>
+			<a href="https://processing.org" target="_blank">processing.org</a>
+			<br>
+			And to import processing's libraries in Eclipse(for different editors the steps should be similar):
+			<br>
+			<a href="https://processing.org/tutorials/eclipse/" target="_blank">Processing in eclipse</a>
+			<br>
+			Practice makes perfect so we recommend you to start toying with you knowledge to get used to programming. AI is not an easy concept. In order to fully utilize this website you should have a strong basis on knowledge and some experience. It is better to build those basics than to dive deeply into something that you would not be able to grasp. Do you still feel ready for AI? If not, don't worry! Bookmark this page on your browser and we challenge you to come back when you are ready!
+			<br>
+			After you finished with JAVA take on Python! It is frequently used in programming AI so it will be useful.
+			<h2>Github:</h2>
+			Github is a source control software or in simpler words - a database for source files.
+			For beginners, the only feature that is important for you is the download source function. From the so called repository(the project you want do download) click on "Clone or download" then "Download zip". This will download the source files. Extract them and then open them from files->Open project from file system from your IDE (in this example it is Eclipse)
+			<h2>Recommendet:Zeppelin</h2>
+			If you want to use the tutorials from the web site Deeplearning4j you have to install Docker: 
+			<a href="https://www.docker.com/get-started" target="_blank">Install docker</a>
+			<br>
+			Then run in your command shell (for windows it is PowerShell) the command from here:We recommend you to run the first command:
+			<br>
+			<a target="_blank" href="https://deeplearning4j.org/tutorials/setup#install-apache-zeppelin">docker run -it --rm  -p 8080:8080 skymindops/zeppelin-dl4j:latest</a>
+			<h2>Ai:</h2>
+		</div>
+		<div id="intermediate_section" style="display:none">
+			<h2>Git:</h2>
+			Git is a very useful and versatile source control tool. Only basic functionality is required for you to use this web site.
+			But if you want to contribute to a project you have to understand about forking, pull requests e.t.c. 
+			<a target="_blank" href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/">A beginners guide to contributing to a github project</a>
+			<h2>Ai:</h2>
+			<h2>Recomemndet:Zeppelin</h2>
+			If you want to use the tutorials from the web site Deeplearning4j you have to install Docker: 
+			<a href="https://www.docker.com/get-started" target="_blank">Install docker</a>
+			<br>
+			Then run in your command shell (for windows it is PowerShell) the command from here:We recommend you to run the first command:
+			<br>
+			<a target="_blank" href="https://deeplearning4j.org/tutorials/setup#install-apache-zeppelin">docker run -it --rm  -p 8080:8080 skymindops/zeppelin-dl4j:latest</a>
+		</div>
+		<div id="advanced_section" style="display:none">
+			<h2>Ai:</h2>
+			<a href="https://www.coursera.org/learn/machine-learning">Machine learning course</a>
+			<h2>Recomemndet:Zeppelin</h2>
+			If you don't have Docker and want to use the tutorials from the web site Deeplearning4j you have to install it.
+			<br>
+			Then run in your command shell the command from
+			<a target="_blank" href="https://deeplearning4j.org/tutorials/setup#install-apache-zeppelin">here</a>
+			
+		</div>
 	</div>
 	<script>
 		function hide(name) {
@@ -81,15 +180,24 @@
 			var x = document.getElementById(name);
 			x.style.display = "block";
 		}
+		$(document).ready(function(){
+			$("#beginner").click(function(){
+				show('beginner_section');
+				hide('intermediate_section');
+				hide('advanced_section');
+			});
+			$("#intermediate").click(function(){
+				hide('beginner_section');
+				show('intermediate_section');
+				hide('advanced_section');
+			});
+			$("#advanced").click(function(){
+				hide('beginner_section');
+				hide('intermediate_section');
+				show('advanced_section');
+			});
+		});
 	</script>
-	<button
-		onclick="show('beginner');show('intermediate');show('advanced');">Show
-		Beginner</button>
-	<button
-		onclick="hide('beginner');show('intermediate');show('advanced');">Show
-		Intermediate</button>
-	<button
-		onclick="hide('beginner');hide('intermediate');show('advanced');">Show
-		Advanced</button>
+
 </body>
 </html>
