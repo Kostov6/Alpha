@@ -9,7 +9,7 @@ var loggedUser=
 		{
 			this.listeners[i](this.value,newValue);
 		}
-		value=newValue;
+		this.value=newValue;
 	}
 }
 

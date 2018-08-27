@@ -1,23 +1,22 @@
-window.onload=function(){
+$(document).ready(function(){
 	document.getElementById("model-form").addEventListener("submit", function(event) {
 		event.preventDefault();
-		var user=document.getElementById("user");
+		var user=document.getElementById("user").value;
 		var repo=document.getElementById("repo");
 		var project=document.getElementById("project");
 		var jsonModel=
 		{
 			projectId: parseInt(project.value),
-			name:user.value,
+			name:user,
 			repo:repo.value,
 			gitUrl:"https://github.com/"+user.value+"/"+repo.value,
 			gitStars:0
 		};
-		addModel(jsonModel);
-		console.log(jsonModel);
+		addExternalModel(jsonModel);
 	});
-}
+});
 
-function addModel(jsonModel)
+function addExternalModel(jsonModel)
 {
 	$.ajax({
 		type: "PUT",
