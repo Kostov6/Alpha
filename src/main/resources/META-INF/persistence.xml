@@ -11,6 +11,8 @@
 		<class>objects.Model</class>
 		<class>objects.Dataset</class>
 		<class>objects.Comment</class>
+		<class>objects.Feedback</class>
+		<class>objects.External</class>
 		<properties>
 			<property name="eclipselink.target-database"
 				value="org.eclipse.persistence.platform.database.MySQLPlatform" />
