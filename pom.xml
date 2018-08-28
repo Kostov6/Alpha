@@ -79,7 +79,7 @@
 				<version>3.2.1</version>
 				<configuration>
 					<warSourceDirectory>WebContent</warSourceDirectory>
-					<outputDirectory>C:\Users\Vic\Desktop\tomee7.0.5\apache-tomee-plus-7.0.5\webapps</outputDirectory>
+					<outputDirectory>C:\Users\C5275297\Desktop\tomee7.0.5\apache-tomee-plus-7.0.5\webapps</outputDirectory>
 				</configuration>
 			</plugin>
 		</plugins>

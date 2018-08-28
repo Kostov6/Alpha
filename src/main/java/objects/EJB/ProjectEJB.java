@@ -48,4 +48,15 @@ public class ProjectEJB implements ProjectInterface {
 			entitymanager.persist(project);
 	}
 
+	@Override
+	public Object[] getFeaturedProjects() {
+		Project[] projects= {
+				new Project(2, "Symbol recognition", "images/hand-digits.png", "supervised", "java"),
+				new Project(1, "Chess engine", "images/chess-engine.jpeg", "supervised", "java"),
+				new Project(2, "Symbol recognition", "images/hand-digits.png", "supervised", "java")
+		};
+		
+		return projects;
+	}
+
 }

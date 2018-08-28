@@ -21,6 +21,15 @@ public class ProjectsEndpoint implements ProjectInterface {
 		return projectManager.getProjects();
     }
 	
+	
+	@GET
+    @Produces("application/json")
+	@Path("/featured")
+	public Object[] getFeaturedProjects() {
+		return projectManager.getFeaturedProjects();
+	}
+	
+	
 	public Object[] getAllProjects(){
 		return projectManager.getAllProjects();
 	}
@@ -34,6 +43,9 @@ public class ProjectsEndpoint implements ProjectInterface {
 	public void initialize() {
 		projectManager.initialize();
 	}
-	
+
+
+
+
 	
 }

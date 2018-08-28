@@ -17,16 +17,16 @@ public class Model {
 	private String name;
 	private String repo;
 	private String gitUrl;
-	private int gitStars;
+	private String language;
 	
 	public Model() {
 	}
 
-	public Model(int projectId, String name, String gitUrl, int gitStars,String repo) {
+	public Model(int projectId, String name, String gitUrl, String language,String repo) {
 		this.projectId = projectId;
 		this.name = name;
 		this.gitUrl = gitUrl;
-		this.gitStars = gitStars;
+		this.language = language;
 		this.repo=repo;
 	}
 
@@ -62,12 +62,12 @@ public class Model {
 		this.gitUrl = gitUrl;
 	}
 
-	public int getGitStars() {
-		return gitStars;
+	public String getLanguage() {
+		return language;
 	}
 
-	public void setGitStars(int gitStars) {
-		this.gitStars = gitStars;
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 
 	public String getRepo() {
@@ -81,7 +81,7 @@ public class Model {
 	@Override
 	public String toString() {
 		return "Model [id=" + id + ", projectId=" + projectId + ", name=" + name + ", repo=" + repo + ", gitUrl="
-				+ gitUrl + ", gitStars=" + gitStars + "]";
+				+ gitUrl + ", language=" + language + "]";
 	}
 
 

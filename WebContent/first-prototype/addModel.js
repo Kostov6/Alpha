@@ -10,20 +10,37 @@ function getProjectId()
 $(document).ready(function(){
 	document.getElementById("model-form").addEventListener("submit", function(event) {
 		if(loggedUser.value==null)
-			return
+		{
+			//window.alert("You haven't logged in yet");
+			window.open("https://github.com/login/oauth/authorize?client_id=099b3b26927004bc8273&scope=user:email%20public_repo","_self");
+			return;
+		}
 		event.preventDefault();
 		var user=loggedUser.value.user;
-		var repo=document.getElementById("repo");
-		var project=getProjectId();
+		var repo=document.getElementById("repo").value;
+		var projectId=getProjectId();
+		var language=document.getElementById("language").value;
 		var jsonModel=
 		{
-			projectId: parseInt(project.value),
+			projectId: parseInt(projectId),
 			name:user,
-			repo:repo.value,
-			gitUrl:"https://github.com/"+user.value+"/"+repo.value,
-			gitStars:0
+			repo:repo,
+			gitUrl:"https://github.com/"+user+"/"+repo,
+			language:language
 		};
 		addModel(jsonModel);
+		
+		var avatarUrl=loggedUser.value.avatarUrl;
+		var comment=document.getElementById("description").value;
+		var jsonComment={
+			projectId: parseInt(projectId),
+			name: "Description: "+user,
+			avatarUrl: avatarUrl,
+			comment: comment
+		};
+		addDescription(jsonComment);
+		window.open("http://localhost:8080/Alpha-Build/first-prototype/AiProjects.html?projectId="+projectId,"_self");
+		
 	});
 });
 
@@ -34,5 +51,15 @@ function addModel(jsonModel)
 		url: "http://localhost:8080/Alpha-Build/models/addModel",
 		contentType: "application/json",
 		data: JSON.stringify(jsonModel)
+	});
+}
+
+function addDescription(jsonComment)
+{
+	$.ajax({
+		type: "PUT",
+		url: "http://localhost:8080/Alpha-Build/comments/add",
+		contentType: "application/json",
+		data: JSON.stringify(jsonComment)
 	});
 }

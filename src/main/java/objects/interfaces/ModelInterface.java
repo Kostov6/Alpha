@@ -11,6 +11,8 @@ public interface ModelInterface {
 
 	public Object getModelsForProject(@PathParam("projectId") int projectId);
 	
+	//lopublic String getLanguagesForProject(@PathParam("projectId") int projectId);
+	
 	public Object getModelById(@PathParam("id") int id);
 	
 	public void addModel(Model json);

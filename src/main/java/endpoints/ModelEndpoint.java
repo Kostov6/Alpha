@@ -48,4 +48,11 @@ public class ModelEndpoint implements ModelInterface{
 	{
 		return modelManager.getModelById(id);
 	}
+
+//	@GET
+//	@Path("/getLanguagesByProjectId/{projectId}")
+//	@Produces("text/plain")
+//	public String getLanguagesForProject(@PathParam("projectId") int projectId) {
+//		return modelManager.getLanguagesForProject(projectId);
+//	}
 }

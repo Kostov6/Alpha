@@ -7,6 +7,8 @@ public interface ProjectInterface {
 
     public Object getProjects();
 	
+    public Object[] getFeaturedProjects();
+    
 	public Object[] getAllProjects();
 	
 	public Object[] getNProjects(int from,int to);

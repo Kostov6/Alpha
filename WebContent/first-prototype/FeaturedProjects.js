@@ -1,15 +1,11 @@
 
 
 $(document).ready(function(){
-	$.getJSON( "http://localhost:8080/Alpha-Build/projects", function( jsonArray ) {
+	$.getJSON( "http://localhost:8080/Alpha-Build/projects/featured", function( jsonArray ) {
 		$.each(
 			jsonArray ,
 			function(i,jsonObject) {
-				if(i==0){
 					$("#featured-container").append(createFeaturedProjectElement(jsonObject)) ;
-					$("#featured-container").append(createFeaturedProjectElement(jsonObject)) ;
-					$("#featured-container").append(createFeaturedProjectElement(jsonObject)) ;
-				}
 			}
 		);
 	});

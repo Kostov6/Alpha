@@ -59,7 +59,7 @@ function putComment()
 	var comment=document.getElementById("commentBox-comment").value;
 	var jsonComment={
 		projectId: parseInt(projectId),
-		name: user,
+		name: "Comment: "+user,
 		avatarUrl: avatarUrl,
 		comment: comment
 	};
@@ -69,8 +69,8 @@ function putComment()
 		contentType: "application/json",
 		data: JSON.stringify(jsonComment)
 	});
-	window.alert("Comment added to this project");
-	console.log(jsonComment);
+	//window.open("http://localhost:8080/Alpha-Build/first-prototype/AiProjects.html?projectId="+projectId,"_self");
+	location.reload();
 }
 
 function getUserName(jsonObject)
