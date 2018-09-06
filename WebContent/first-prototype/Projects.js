@@ -4,8 +4,7 @@ $(document).ready(function(){
 			$.each(
 				jsonArray ,
 				function(i,jsonObject) {
-					$("#container").append(createProjectElement(jsonObject,["Java",""])) ;
-					$("#container").append(createProjectElement(jsonObject,["Java","Python",""])) ;					
+					$("#container").append(createProjectElement(jsonObject,jsonObject.lang.split(";"))) ;			
 				}
 			);
 		});
@@ -23,6 +22,9 @@ function createProjectElement(jsonObject,langs)
 			var color="w3-yellow";
 			if(langs[i].localeCompare("Python")==0)
 				color="w3-blue";
+			if(langs[i].localeCompare("Scala")==0)
+				color="w3-red";
+
 			var link=getLink(jsonObject.id)+"&lang="+langs[i];
 			top+="<button onclick='window.open(\""+link+"\",\"_self\")' class=\"w3-button w3-small w3-padding-small "+color+"\" style='margin:10px 5px 10px 5px;'>"+langs[i]+"</button>";
 		}

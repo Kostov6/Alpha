@@ -32,7 +32,7 @@ public class DatasetEJB implements DatasetInterface{
 	public void initialize()
 	{
 		Dataset[] datasets= {
-				new Dataset(1,"Kostov6","https://raw.githubusercontent.com/Kostov6/test-repo/master/MNIST.ser",1,1)
+				new Dataset(1,"Kostov6","https://raw.githubusercontent.com/Kostov6/test-repo/master/MNIST.ser")
 		};
 		
 		for(Dataset dataset: datasets)

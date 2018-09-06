@@ -13,6 +13,10 @@ public interface ProjectInterface {
 	
 	public Object[] getNProjects(int from,int to);
 	
+	public void commitLanguage(int projectId,String language);
+	
+	public String getLanguageString(int projectId);
+	
 	public void initialize();
 	
 	

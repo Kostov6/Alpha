@@ -16,18 +16,53 @@ public class Model {
 	private int projectId;
 	private String name;
 	private String repo;
-	private String gitUrl;
 	private String language;
+	
+	//aditional
+	private String otherImgSrc;
+	private String imgFolder;
+	private String imgDomain;
+	private String readme;
 	
 	public Model() {
 	}
 
-	public Model(int projectId, String name, String gitUrl, String language,String repo) {
+	public Model(int projectId, String name,String repo,String language) {
 		this.projectId = projectId;
 		this.name = name;
-		this.gitUrl = gitUrl;
-		this.language = language;
 		this.repo=repo;
+		this.language = language;
+		
+		this.otherImgSrc="no";
+		this.readme="README.md";
+	}
+	
+	
+
+	public Model(int projectId, String name, String repo, String language, String readme) {
+
+		this.projectId = projectId;
+		this.name = name;
+		this.repo = repo;
+		this.language = language;
+		
+		this.otherImgSrc="no";
+		this.readme = readme;
+	}
+
+	
+	
+	public Model(int projectId, String name, String repo, String language, String imgFolder, String imgDomain) {
+		super();
+		this.projectId = projectId;
+		this.name = name;
+		this.repo = repo;
+		this.language = language;
+		
+		this.otherImgSrc="yes";
+		this.imgFolder = imgFolder;
+		this.imgDomain = imgDomain;
+		this.readme="README.md";
 	}
 
 	public int getId() {
@@ -54,14 +89,6 @@ public class Model {
 		this.name = name;
 	}
 
-	public String getGitUrl() {
-		return gitUrl;
-	}
-
-	public void setGitUrl(String gitUrl) {
-		this.gitUrl = gitUrl;
-	}
-
 	public String getLanguage() {
 		return language;
 	}
@@ -78,13 +105,40 @@ public class Model {
 		this.repo = repo;
 	}
 
-	@Override
-	public String toString() {
-		return "Model [id=" + id + ", projectId=" + projectId + ", name=" + name + ", repo=" + repo + ", gitUrl="
-				+ gitUrl + ", language=" + language + "]";
+	public String getOtherImgSrc() {
+		return otherImgSrc;
 	}
 
+	public void setOtherImgSrc(String otherImgSrc) {
+		this.otherImgSrc = otherImgSrc;
+	}
 
+	public String getImgFolder() {
+		return imgFolder;
+	}
+
+	public void setImgFolder(String imgFolder) {
+		this.imgFolder = imgFolder;
+	}
+
+	public String getImgDomain() {
+		return imgDomain;
+	}
+
+	public void setImgDomain(String imgDomain) {
+		this.imgDomain = imgDomain;
+	}
+
+	public String getReadme() {
+		return readme;
+	}
+
+	public void setReadme(String readme) {
+		this.readme = readme;
+	}
+
+	
+	
 	
 	
 }

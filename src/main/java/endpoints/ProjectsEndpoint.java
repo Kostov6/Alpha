@@ -2,7 +2,9 @@ package endpoints;
 
 import javax.ejb.EJB;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import objects.interfaces.ProjectInterface;
@@ -42,6 +44,21 @@ public class ProjectsEndpoint implements ProjectInterface {
 	@Path("/initialize")
 	public void initialize() {
 		projectManager.initialize();
+	}
+
+
+	@POST
+	@Path("/newLanguageString/{projectId}/{language}")
+	public void commitLanguage(@PathParam("projectId") int projectId,@PathParam("language") String language) {
+		projectManager.commitLanguage(projectId, language);
+	}
+
+
+	@GET
+	@Path("/languageString/{projectId}")
+    @Produces("text/plain")
+	public String getLanguageString(@PathParam("projectId") int projectId) {
+		return projectManager.getLanguageString(projectId);
 	}
 
 

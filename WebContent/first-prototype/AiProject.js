@@ -56,3 +56,12 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }
 
+function replaceAll(target,search, replacement)
+{
+    return target.replace(new RegExp(search, 'g'), replacement);
+}
+
+function testReplace(theUrl,imageRegex,gitReplace)
+{
+	return replaceAll(httpGet(theUrl),imageRegex,gitReplace);
+}

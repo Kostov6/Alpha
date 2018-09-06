@@ -16,18 +16,14 @@ public class Dataset {
 	private int projectId;
 	private String name;
 	private String url;
-	private int stars;
-	private float size;
 	
 	public Dataset() {
 	}
 
-	public Dataset(int projectId, String name, String url, int stars, float size) {
+	public Dataset(int projectId, String name, String url) {
 		this.projectId = projectId;
 		this.name = name;
 		this.url = url;
-		this.stars = stars;
-		this.size = size;
 	}
 
 	public int getId() {
@@ -62,27 +58,5 @@ public class Dataset {
 		this.url = url;
 	}
 
-	public int getStars() {
-		return stars;
-	}
 
-	public void setStars(int stars) {
-		this.stars = stars;
-	}
-
-	public float getSize() {
-		return size;
-	}
-
-	public void setSize(float size) {
-		this.size = size;
-	}
-
-	@Override
-	public String toString() {
-		return "Dataset [id=" + id + ", projectId=" + projectId + ", name=" + name + ", url=" + url + ", stars=" + stars
-				+ ", size=" + size + "]";
-	}
-	
-	
 }

@@ -49,6 +49,13 @@ public class ModelEndpoint implements ModelInterface{
 		return modelManager.getModelById(id);
 	}
 
+	@GET
+	@Path("/getRepo/{projectId}/{name}")
+	@Produces("application/json")
+	public Object getRepo(@PathParam("projectId") int projectId,@PathParam("name") String name) {
+		return modelManager.getRepo(projectId, name);
+	}
+
 //	@GET
 //	@Path("/getLanguagesByProjectId/{projectId}")
 //	@Produces("text/plain")

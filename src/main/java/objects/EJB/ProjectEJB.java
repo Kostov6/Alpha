@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import objects.Model;
 import objects.Project;
 import objects.interfaces.ProjectInterface;
 
@@ -40,8 +41,13 @@ public class ProjectEJB implements ProjectInterface {
 	public void initialize()
 	{
 		Project[] projects= {
-				new Project(1, "Chess engine", "images/chess-engine.jpeg", "supervised", "java"),
-				new Project(2, "Symbol recognition", "images/hand-digits.png", "supervised", "java")
+				new Project(1,"Frameworks","images/open-source-framwroks-for-AI-development.png","Java;Python;"),
+				new Project(2,"Image recognition","images/Image-Recognition-and-Analysis-Help-Your-Brand-1.png","Python;Java;"),
+				new Project(3,"Chess engine", "images/chess-engine.jpeg", "Python;JavaScript;"),
+				new Project(4,"Other projects","images/ai-other.jpg","Java;Python;"),
+				new Project(5,"Symbol recognition", "images/hand-digits.png", "Scala;Python;"),
+				new Project(6,"Approximation","images/NLAFI.png","")
+				
 		};
 		
 		for(Project project: projects)
@@ -51,12 +57,38 @@ public class ProjectEJB implements ProjectInterface {
 	@Override
 	public Object[] getFeaturedProjects() {
 		Project[] projects= {
-				new Project(2, "Symbol recognition", "images/hand-digits.png", "supervised", "java"),
-				new Project(1, "Chess engine", "images/chess-engine.jpeg", "supervised", "java"),
-				new Project(2, "Symbol recognition", "images/hand-digits.png", "supervised", "java")
+				new Project(3,"Chess engine", "images/chess-engine.jpeg", "Python;JavaScript;"),
+				new Project(2,"Image recognition","images/Image-Recognition-and-Analysis-Help-Your-Brand-1.png","Python;Java;"),
+				new Project(5,"Symbol recognition", "images/hand-digits.png", "Scala;Python;"),
+				
 		};
 		
 		return projects;
+	}
+
+	@Override
+	public void commitLanguage(int projectId, String language) {
+		Project project=entitymanager.find(Project.class, projectId);
+		String[] langs=project.getLang().split(";");
+		for(String lang:langs)
+		{
+			if(lang.equals(language))
+			{
+				return;
+			}
+		}
+		
+		//extend language string
+		String newLanguageString=new String(project.getLang());
+		newLanguageString+=language+";";
+		
+		
+	}
+
+	@Override
+	public String getLanguageString(int projectId) {
+		Project project=entitymanager.find(Project.class, projectId);
+		return project.getLang();
 	}
 
 }

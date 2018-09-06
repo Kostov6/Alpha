@@ -1,0 +1,1 @@
+$.get("http://localhost:8080/Alpha-Build/models/initialize");

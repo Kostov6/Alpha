@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
 @Entity
-@NamedQuery(name="getAllProjects", query="SELECT p FROM Project p ORDER BY p.name ASC")
+@NamedQuery(name="getAllProjects", query="SELECT p FROM Project p")
 public class Project {
 
 	@Id
@@ -16,17 +16,15 @@ public class Project {
 	private int id;
 	private String name;
 	private String image;
-	private String type;
 	private String lang;
 	
 	public Project() {
 	}
 
-	public Project(int id, String name, String image, String type, String lang) {
-		this.id = id;
+	public Project(int id, String name, String image, String lang) {
+		this.id=id;
 		this.name = name;
 		this.image = image;
-		this.type = type;
 		this.lang = lang;
 	}
 
@@ -54,13 +52,6 @@ public class Project {
 		this.image = image;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
 
 	public String getLang() {
 		return lang;
@@ -72,7 +63,7 @@ public class Project {
 
 	@Override
 	public String toString() {
-		return "Project [id=" + id + ", name=" + name + ", image=" + image + ", type=" + type + ", lang=" + lang + "]";
+		return "Project [id=" + id + ", name=" + name + ", image=" + image + ", lang=" + lang + "]";
 	}
 	
 	   

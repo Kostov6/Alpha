@@ -13,6 +13,8 @@ public interface ModelInterface {
 	
 	//lopublic String getLanguagesForProject(@PathParam("projectId") int projectId);
 	
+	public Object getRepo(int projectId,String name);
+	
 	public Object getModelById(@PathParam("id") int id);
 	
 	public void addModel(Model json);
