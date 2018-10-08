@@ -20,11 +20,15 @@ $(document).ready(function(){
 		var repo=document.getElementById("repo").value;
 		var projectId=getProjectId();
 		var language=document.getElementById("language").value;
+		commitLanguage(language);
+		
 		var jsonModel=
 		{
 			projectId: parseInt(projectId),
 			name:user,
 			repo:repo,
+			readme: "README.md",
+			otherImgSrc: "no",
 			gitUrl:"https://github.com/"+user+"/"+repo,
 			language:language
 		};
@@ -62,4 +66,14 @@ function addDescription(jsonComment)
 		contentType: "application/json",
 		data: JSON.stringify(jsonComment)
 	});
+}
+
+function commitLanguage(lang)
+{
+
+	$.ajax({
+		type: "POST",
+		url: "http://localhost:8080/Alpha-Build/projects/newLanguageString/"+getProjectId()+"/"+lang
+	});
+
 }

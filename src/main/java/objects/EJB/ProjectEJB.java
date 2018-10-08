@@ -68,6 +68,7 @@ public class ProjectEJB implements ProjectInterface {
 
 	@Override
 	public void commitLanguage(int projectId, String language) {
+		System.out.println("Commiting lanuage to project id "+projectId + " "+language );
 		Project project=entitymanager.find(Project.class, projectId);
 		String[] langs=project.getLang().split(";");
 		for(String lang:langs)
@@ -82,6 +83,7 @@ public class ProjectEJB implements ProjectInterface {
 		String newLanguageString=new String(project.getLang());
 		newLanguageString+=language+";";
 		
+		project.setLang(newLanguageString);
 		
 	}
 
